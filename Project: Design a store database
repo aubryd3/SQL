@@ -1,0 +1,29 @@
+--create a fictional alchemy shop database
+
+CREATE TABLE alchemy (id INTEGER PRIMARY KEY, name TEXT, color TEXT, price INTEGER, rarity TEXT);
+
+INSERT INTO alchemy
+VALUES
+(1, "Haste", "Yellow", 25, "Uncommon"),
+(2, "Shield", "Blue", 3, "Common"),
+(3, "Minor Healing", "Red", 4, "Common"),
+(4, "Lesser Poison", "Green", 7, "Uncommon"),
+(5, "Antidote", "Purple", 6, "Common"),
+(6, "Stoneskin", "Grey", 75, "Epic"),
+(7, "Shrink", "Turquoise", 30, "Rare"),
+(8, "Lesser Healing", "Red", 20, "Uncommon"),
+(9, "Invisibility", "Silver", 60, "Rare"),
+(10, "Lesser Restoration", "Purple", 50, "Uncommon"),
+(11, "Greater Healing", "Red", 80, "Rare"),
+(12, "Heroism", "Blue", 70, "Rare"),
+(13, "Elemental Protection", "Turquoise", 90, "Rare"),
+(14, "Break Enchantment", "Black", 150, "Legendary"),
+(15, "Speak to Animals", "Yellow", 30, "Uncommon");
+
+--display everything in the store ordered by price ascending
+SELECT * FROM alchemy ORDER BY price asc;
+
+--display average price of an uncommon item
+SELECT AVG(price) "Average uncommon item price"
+FROM alchemy 
+WHERE rarity = 'Uncommon';
