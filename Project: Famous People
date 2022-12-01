@@ -1,0 +1,79 @@
+/* Data set containing fictional characters, their powers and what world they exist in */
+
+CREATE TABLE fictional_characters (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, alignment TEXT, world TEXT);
+
+INSERT INTO fictional_characters (name, alignment, world)
+VALUES
+
+("Goku", "Good", "DBZ"),
+("Superman", "Good", "DC"),
+("Iron Man", "Good", "Marvel"),
+("Sylvannas", "Evil", "Warcraft"),
+("Darth Vader", "Evil", "Star Wars"),
+("Batman", "Good", "DC"),
+("Venom", "Neutral", "Marvel"),
+("Vegeta", "Evil", "DBZ"),
+("Malfurion", "Good", "Warcraft"),
+("Sabretooth", "Neutral", "Marvel"),
+("Darksied", "Evil", "DC"),
+("Luke Skywalker", "Good", "Star Wars"),
+("Joker", "Evil", "DC"),
+("Spiderman", "Good", "Marvel"),
+("Mandarin", "Evil", "Marvel"),
+("Wolverine", "Good", "Marvel");
+
+
+CREATE TABLE powers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    character_id INTEGER,
+    power TEXT);
+
+INSERT INTO powers (character_id, power)
+VALUES
+(1, "Ki"),
+(2, "Super Strength"),
+(3, "Genius Intellect"),
+(4, "Necromancy"),
+(5, "The Force"),
+(6, "Genius Intellect"),
+(7, "Super Strength"),
+(8, "Ki"),
+(9, "Druidism"),
+(10, "Regeneration"),
+(11, "Super Strength"),
+(12, "The Force"),
+(13, "Insanity"),
+(14, "Super Strength"),
+(15, "Magic Rings"),
+(16, "Regeneration");
+
+
+CREATE table enemies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person1_id INTEGER,
+    person2_id INTEGER);
+    
+INSERT INTO enemies (person1_id, person2_id)
+VALUES 
+(1, 8),
+(2,11),
+(3,15),
+(4,9),
+(5,12),
+(6,13),
+(7,14),
+(10,16);
+
+--Pairing the characters together with their enemies
+
+SELECT a.name AS character , a.alignment, b.name AS nemesis, b.alignment FROM enemies
+JOIN fictional_characters a
+ON enemies.person1_id = a.id
+JOIN fictional_characters b
+ON enemies.person2_id = b.id;
+
+--Creating a list of characters along with their matching power and the world in which they exist
+SELECT fc.name, p.power, fc.world 
+FROM fictional_characters fc
+JOIN powers p
+ON fc.id = p.character_id;
