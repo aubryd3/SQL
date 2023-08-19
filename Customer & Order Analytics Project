@@ -1,4 +1,4 @@
-# Practice using SQLite Studio, connecting a database and using it to run queries.
+# Practice using SQLite Studio, connecting a database and using it to run queries
 
 #1 How many orders were placed in Janurary?
 SELECT COUNT(orderID) FROM BIT_DB.JanSales;
