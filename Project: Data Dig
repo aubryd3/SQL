@@ -1,4 +1,4 @@
---chose a data set of Marvel characters
+--Chose a data set of Marvel characters
 
 CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
     name TEXT,
