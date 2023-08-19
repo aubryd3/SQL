@@ -1,4 +1,4 @@
-/* Data set containing fictional characters, their powers and what world they exist in */
+/* Data set containing fictional characters, their powers and what world they exist in. */
 
 CREATE TABLE fictional_characters (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, alignment TEXT, world TEXT);
 
