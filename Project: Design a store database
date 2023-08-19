@@ -1,4 +1,4 @@
---create a fictional alchemy shop database
+--Create a fictional alchemy shop database
 
 CREATE TABLE alchemy (id INTEGER PRIMARY KEY, name TEXT, color TEXT, price INTEGER, rarity TEXT);
 
