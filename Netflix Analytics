@@ -1,4 +1,4 @@
-# In this SQL code I'm querying a PostgreSQL database containing Netflix data to answer questions about that data.
+# In this SQL code I'm querying a PostgreSQL database containing Netflix data to answer questions about that data
 
 --Combining tables into one to show the director matched up with their shows and what kind of media they are
 SELECT 
