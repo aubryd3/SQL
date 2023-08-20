@@ -1,0 +1,45 @@
+/* Practice updating and deleting data from a table using data for a makeshift daily task tracking app */
+
+CREATE TABLE tracker (id INTEGER PRIMARY KEY, task TEXT, duration INTEGER, time_of_day TEXT);
+
+INSERT INTO tracker VALUES (1,"Bodyweight Workout", 60, "Morning");
+INSERT INTO tracker VALUES (2,"Laundry", 40, "Afternoon");
+INSERT INTO tracker VALUES (3, "Grocery Shopping", 30, "Evening");
+INSERT INTO tracker VALUES (4, "Meal Prep", 90, "Evening");
+INSERT INTO tracker VALUES (5, "Walking", 30, "Morning");
+INSERT INTO tracker VALUES (6, "Cleaning", 75, "Afternoon");
+INSERT INTO tracker VALUES (7, "Studying", 60, "Afternoon");
+
+SELECT * FROM tracker;
+
+SELECT task, duration FROM tracker
+ORDER BY duration DESC;
+
+SELECT task, time_of_day FROM tracker
+ORDER BY time_of_day;
+
+SELECT time_of_day, COUNT(*) AS times FROM tracker
+GROUP BY time_of_day;
+
+ALTER TABLE tracker ADD feeling TEXT default "unknown";
+
+SELECT * FROM tracker;
+
+UPDATE tracker
+SET feeling = "energized"
+WHERE id = 1;
+
+UPDATE tracker
+SET feeling = "accomplished"
+WHERE id = 7;
+
+UPDATE tracker
+SET feeling = "energized"
+WHERE id = 5;
+
+
+SELECT * FROM tracker;
+
+DELETE FROM tracker WHERE id = 2;
+
+SELECT * FROM tracker;
